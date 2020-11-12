@@ -1,0 +1,18 @@
+<configuration >
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+
+        <!-- encoder 默认配置为PatternLayoutEncoder -->
+        <layout class="com.example.logbacktest.log.MyPatternLayout">
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}][%level][%ip][%thread][%X{customerId:-0}][%X{traceId:-0}][%contextName][%logger{10}]%m%n'
+            </pattern>
+        </layout>
+    </appender>
+
+    <logger name="com.example" level="INFO"/>
+
+    <root level="ERROR">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
